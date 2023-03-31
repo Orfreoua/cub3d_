@@ -6,30 +6,30 @@
 /*   By: orfreoua <ofreoua42student@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:07:39 by orfreoua          #+#    #+#             */
-/*   Updated: 2023/03/22 17:48:46 by orfreoua         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:28:58 by orfreoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-double	ft_se(t_data *data, t_point decimal, double angle)
+double	se(t_data *data, t_point decimal, double angle)
 {
 	if ((1 - decimal.x) / cos(angle) <= (1 - decimal.y) / cos(M_PI / 2 - angle))
 	{
-		data->ray.hypo = ft_se_x(data, decimal, angle);
+		data->ray.hypo = se_x(data, decimal, angle);
 		if (data->ray.hypo == NULL)
 			return (-1);
 	}
 	else if ((1 - decimal.y) / cos(M_PI / 2 - angle) <= (1 - decimal.x) / cos(angle))
 	{
-		data->ray.hypo = ft_se_y(data, decimal, angle);
+		data->ray.hypo = se_y(data, decimal, angle);
 		if (data->ray.hypo == NULL)
 			return (-1);
 	}
-	return (ft_se_1(data, decimal, angle));
+	return (se_1(data, decimal, angle));
 }
 
-double	ft_se_1(t_data *data, t_point decimal, double angle)
+double	se_1(t_data *data, t_point decimal, double angle)
 {
 	double	hypo;
 
@@ -46,10 +46,10 @@ double	ft_se_1(t_data *data, t_point decimal, double angle)
 		return (hypo);
 	}
 	else
-		return (ft_se_2(data, decimal, angle));
+		return (se_2(data, decimal, angle));
 }
 
-double	ft_se_2(t_data *data, t_point decimal, double angle)
+double	se_2(t_data *data, t_point decimal, double angle)
 {
 	double	hypo;
 

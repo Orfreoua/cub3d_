@@ -6,7 +6,7 @@
 /*   By: orfreoua <ofreoua42student@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 14:58:03 by orfreoua          #+#    #+#             */
-/*   Updated: 2023/03/22 16:29:49 by orfreoua         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:34:20 by orfreoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,37 +119,43 @@ double	detect_wall_distance_north(t_data *data);
 void	draw_textured_column(t_data *data, t_screen *buff, int x, int y);
 t_texture	*choose_texture(t_data *data);
 double	calculate_hit_decimal(t_data *data);
-char	ft_check_hit(t_data *data, char hit, double x, double y);
+char	check_hit(t_data *data, char hit, double x, double y);
 
-double	ft_sw(t_data *data, t_point decimal, double angle);
-double	ft_sw_1(t_data *data, t_point decimal, double angle);
-double	ft_sw_2(t_data *data, t_point decimal, double angle);
-double	*ft_sw_y(t_data *data, t_point decimal, double angle);
-double	ft_sw_y_1(t_data *data, t_point decimal, double angle);
-double	*ft_sw_x(t_data *data, t_point decimal, double angle);
-double	ft_sw_x_1(t_data *data, t_point decimal, double angle);
+double	sw(t_data *data, t_point decimal, double angle);
+double	sw_1(t_data *data, t_point decimal, double angle);
+double	sw_2(t_data *data, t_point decimal, double angle);
+double	*sw_y(t_data *data, t_point decimal, double angle);
+double	sw_y_1(t_data *data, t_point decimal, double angle);
+double	*sw_x(t_data *data, t_point decimal, double angle);
+double	sw_x_1(t_data *data, t_point decimal, double angle);
 
-double	ft_se(t_data *data, t_point decimal, double angle);
-double	ft_se_1(t_data *data, t_point decimal, double angle);
-double	ft_se_2(t_data *data, t_point decimal, double angle);
-double	*ft_se_y(t_data *data, t_point decimal, double angle);
-double	ft_se_y_1(t_data *data, t_point decimal, double angle);
-double	*ft_se_x(t_data *data, t_point decimal, double angle);
-double	ft_se_x_1(t_data *data, t_point decimal, double angle);
+double	se(t_data *data, t_point decimal, double angle);
+double	se_1(t_data *data, t_point decimal, double angle);
+double	se_2(t_data *data, t_point decimal, double angle);
+double	*se_y(t_data *data, t_point decimal, double angle);
+double	se_y_1(t_data *data, t_point decimal, double angle);
+double	*se_x(t_data *data, t_point decimal, double angle);
+double	se_x_1(t_data *data, t_point decimal, double angle);
 
-double	ft_nw(t_data *data, t_point decimal, double angle);
-double	ft_nw_1(t_data *data, t_point decimal, double angle);
-double	ft_nw_2(t_data *data, t_point decimal, double angle);
-double	*ft_nw_y(t_data *data, t_point decimal, double angle);
-double	ft_nw_y_1(t_data *data, t_point decimal, double angle);
-double	*ft_nw_x(t_data *data, t_point decimal, double angle);
-double	ft_nw_x_1(t_data *data, t_point decimal, double angle);
+double	nw(t_data *data, t_point decimal, double angle);
+double	nw_1(t_data *data, t_point decimal, double angle);
+double	nw_2(t_data *data, t_point decimal, double angle);
+double	*nw_y(t_data *data, t_point decimal, double angle);
+double	nw_y_1(t_data *data, t_point decimal, double angle);
+double	*nw_x(t_data *data, t_point decimal, double angle);
+double	nw_x_1(t_data *data, t_point decimal, double angle);
 
-double	ft_ne(t_data *data, t_point decimal, double angle);
-double	ft_ne_1(t_data *data, t_point decimal, double angle);
-double	ft_ne_2(t_data *data, t_point decimal, double angle);
-double	*ft_ne_y(t_data *data, t_point decimal, double angle);
-double	ft_ne_y_1(t_data *data, t_point decimal, double angle);
-double	*ft_ne_x(t_data *data, t_point decimal, double angle);
-double	ft_ne_x_1(t_data *data, t_point decimal, double angle);
+double	ne(t_data *data, t_point decimal, double angle);
+double	ne_1(t_data *data, t_point decimal, double angle);
+double	ne_2(t_data *data, t_point decimal, double angle);
+double	*ne_y(t_data *data, t_point decimal, double angle);
+double	ne_y_1(t_data *data, t_point decimal, double angle);
+double	*ne_x(t_data *data, t_point decimal, double angle);
+double	ne_x_1(t_data *data, t_point decimal, double angle);
+
+void	turn(int keycode, t_data *data);
+void	move(int keycode, t_data *data);
+void	keycode(int keycode, t_data *data);
+int		next_frame(int keycode, t_data *data);
+
 #endif

@@ -6,7 +6,7 @@
 #    By: orfreoua <ofreoua42student@gmail.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 14:57:57 by orfreoua          #+#    #+#              #
-#    Updated: 2023/03/19 18:31:22 by orfreoua         ###   ########.fr        #
+#    Updated: 2023/03/31 19:43:15 by orfreoua         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			= cub3D
 
 SRCS			=	srcs/*.c\
 					srcs/raycasting/*.c\
-					srcs/draw/*.c\
+					srcs/parsing/*.c\
 					srcs/raycasting/ne/*.c\
 					srcs/raycasting/nw/*.c\
 					srcs/raycasting/se/*.c\

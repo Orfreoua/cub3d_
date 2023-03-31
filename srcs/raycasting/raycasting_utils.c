@@ -6,7 +6,7 @@
 /*   By: orfreoua <ofreoua42student@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 18:13:41 by orfreoua          #+#    #+#             */
-/*   Updated: 2023/03/22 18:23:03 by orfreoua         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:34:20 by orfreoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,18 @@ double	calculate_distance_to_wall(t_data *data, double angle)
 	else if (direction == 4)
 		hypo = detect_wall_distance_north(data);
 	else if (direction == 5)
-		hypo = ft_se(data, decimal, angle);
+		hypo = se(data, decimal, angle);
 	else if (direction == 6)
-		hypo = ft_sw(data, decimal, angle);
+		hypo = sw(data, decimal, angle);
 	else if (direction == 7)
-		hypo = ft_nw(data, decimal, angle);
+		hypo = nw(data, decimal, angle);
 	else if (direction == 8)
-		hypo = ft_ne(data, decimal, angle);
+		hypo = ne(data, decimal, angle);
 	else
 		hypo = 0.0; //error.
 	return (hypo);
 }
-char	ft_check_hit(t_data *data, char hit, double x, double y)
+char	check_hit(t_data *data, char hit, double x, double y)
 {
 	if (hit == 'e')
 		return (data->args.map.grid[(unsigned int)y][(unsigned int)x]);

@@ -6,32 +6,32 @@
 /*   By: orfreoua <ofreoua42student@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:07:58 by orfreoua          #+#    #+#             */
-/*   Updated: 2023/03/22 17:28:40 by orfreoua         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:58:14 by orfreoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-double	ft_sw(t_data *data, t_point decimal, double angle)
+double	sw(t_data *data, t_point decimal, double angle)
 {
 	if (decimal.x / cos((M_PI / 2) - (angle - (M_PI / 2)))
 		<= (1 - decimal.y) / cos(angle - (M_PI / 2)))
 	{
-		data->ray.hypo = ft_sw_x(data, decimal, angle);
+		data->ray.hypo = sw_x(data, decimal, angle);
 		if (data->ray.hypo == NULL)
 			return (-1);
 	}
 	else if ((1 - decimal.y) / cos(angle - (M_PI / 2))
 		<= decimal.x / cos((M_PI / 2) - (angle - (M_PI / 2))))
 	{
-		data->ray.hypo = ft_sw_y(data, decimal, angle);
+		data->ray.hypo = sw_y(data, decimal, angle);
 		if (data->ray.hypo == NULL)
 			return (-1);
 	}
-	return (ft_sw_1(data, decimal, angle));
+	return (sw_1(data, decimal, angle));
 }
 
-double	ft_sw_1(t_data *data, t_point decimal, double angle)
+double	sw_1(t_data *data, t_point decimal, double angle)
 {
 	double	hypo;
 
@@ -49,11 +49,11 @@ double	ft_sw_1(t_data *data, t_point decimal, double angle)
 		return (hypo);
 	}
 	else
-		return (ft_sw_2(data, decimal, angle));
+		return (sw_2(data, decimal, angle));
 	return (0);
 }
 
-double	ft_sw_2(t_data *data, t_point decimal, double angle)
+double	sw_2(t_data *data, t_point decimal, double angle)
 {
 	double	hypo;
 

@@ -6,13 +6,13 @@
 /*   By: orfreoua <ofreoua42student@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:07:23 by orfreoua          #+#    #+#             */
-/*   Updated: 2023/03/22 17:45:30 by orfreoua         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:34:20 by orfreoua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../headers/cub3d.h"
 
-double	*ft_se_x(t_data *data, t_point decimal, double angle)
+double	*se_x(t_data *data, t_point decimal, double angle)
 {
 	int		i;
 	double	*hypo;
@@ -22,7 +22,7 @@ double	*ft_se_x(t_data *data, t_point decimal, double angle)
 	if (hypo == NULL)
 		return (NULL);
 	while (data->args.player.hit1.y <= data->args.map.size.height && data->args.player.hit1.x
-		<= data->args.map.size.width && ft_check_hit(data, 'e',
+		<= data->args.map.size.width && check_hit(data, 'e',
 			data->args.player.hit1.x, data->args.player.hit1.y) != '1')
 	{
 		hypo[0] = ((1 - decimal.x) + i) / cos(angle);
@@ -31,18 +31,18 @@ double	*ft_se_x(t_data *data, t_point decimal, double angle)
 				hypo[0] * hypo[0] - (((1 - decimal.x) + i) * ((1 - decimal.x) + i)));
 		i++;
 	}
-	hypo[1] = ft_se_x_1(data, decimal, angle);
+	hypo[1] = se_x_1(data, decimal, angle);
 	return (hypo);
 }
 
-double	ft_se_x_1(t_data *data, t_point decimal, double angle)
+double	se_x_1(t_data *data, t_point decimal, double angle)
 {
 	int		i;
 	double	hypo;
 
 	i = 0;
 	while (data->args.player.hit2.y <= data->args.map.size.height && data->args.player.hit2.x
-		<= data->args.map.size.width && ft_check_hit(data, 's',
+		<= data->args.map.size.width && check_hit(data, 's',
 			data->args.player.hit2.x, data->args.player.hit2.y) != '1')
 	{
 		hypo = ((1 - decimal.y) + i) / cos(M_PI / 2 - angle);
